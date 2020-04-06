@@ -11,6 +11,9 @@ router.get('/', (req, res) => {
   res.write('<h1>Hello from Express.js!</h1>');
   res.end();
 });
+router.get('/editor', (req, res) => {
+  res.sendFile(path.join(__dirname + '/editor.html'));
+});
 router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
 router.post('/', (req, res) => res.json({ postBody: req.body }));
 
