@@ -7,9 +7,9 @@ body {
 }
 #container #editor1 {
     border: 1px solid grey;
-    height: 100px;
-    width: 602px;
-    margin: 0px auto 0;
+    height: 400px;
+    width: 100vw;
+    margin: 20px 10px auto;
     padding:10px;
    }
 #container fieldset {
@@ -92,6 +92,29 @@ background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAY
     margin: 0 auto;
     line-height: 20px;
 }
+
+.title{ 
+ margin-bottom: 10px; 
+ text-align:center; 
+ width: 210px; 
+ color:green; 
+ border: solid black 2px; 
+ } 
+
+ input[type="button"] 
+ { 
+ background-color:green; 
+ color: black; 
+ border: solid black 2px; 
+ width:100% 
+ } 
+
+ input[type="text"] 
+ { 
+ background-color:white; 
+ border: solid black 2px; 
+ width:100% 
+ } 
 
 /* @keyframes spin {
 0% { transform: rotate(0deg); }
