@@ -3,59 +3,116 @@
 
 <head>
   <meta charset='utf-8'>
-  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/afterglow/latest/afterglow.min.js"></script>
   <link type="text/css" rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdn.plyr.io/2.0.15/plyr.css">
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
 </head>
 
 <body>
-  <div id="container" >
-    <fieldset>
-      <button class="fontStyle italic" onclick="document.execCommand('italic',false,null);" title="Italicize Highlighted Text"></button>
-      <button class="fontStyle bold" onclick="document.execCommand( 'bold',false,null);" title="Bold Highlighted Text"></button>
-      <button class="fontStyle underline" onclick="document.execCommand( 'underline',false,null);"></button>
-      <select id="input-font" class="input"  onchange="changeFont (this);">
-        <option value="Arial">Arial</option>
-        <option value="Helvetica">Helvetica</option>
-        <option value="Times New Roman">Times New Roman</option>
-        <option value="Sans serif">Sans serif</option>
-        <option value="Courier New">Courier New</option>
-        <option value="Verdana">Verdana</option>
-        <option value="Georgia">Georgia</option>
-        <option value="Palatino">Palatino</option>
-        <option value="Garamond">Garamond</option>
-        <option value="Comic Sans MS">Comic Sans MS</option>
-        <option value="Arial Black">Arial Black</option>
-        <option value="Tahoma">Tahoma</option>
-        <option value="Comic Sans MS">Comic Sans MS</option>
-      </select>
-      <button class="fontStyle strikethrough" onclick="document.execCommand( 'strikethrough',false,null);"><strikethrough></strikethrough></button>
-      <button class="fontStyle align-left" onclick="document.execCommand( 'justifyLeft',false,null);"><justifyLeft></justifyLeft></button>
-      <button class="fontStyle align-center" onclick="document.execCommand( 'justifyCenter',false,null);"><justifyCenter></justifyCenter></button>
-      <button class="fontStyle align-right" onclick="document.execCommand( 'justifyRight',false,null);"><justifyRight></justifyRight></button>
-      <button class="fontStyle redo-apply" onclick="document.execCommand( 'redo',false,null);"><redo></redo></button>
-      <button class="fontStyle undo-apply" onclick="document.execCommand( 'undo',false,null);"><undo></undo></button>
-      <button class="fontStyle orderedlist" onclick="document.execCommand('insertOrderedList', false, null);"><insertOrderedList></insertOrderedList></button>
-      <button class="fontStyle unorderedlist" onclick="document.execCommand('insertUnorderedList',false, null)"><insertUnorderedList></insertUnorderedList></button>    
-      <input class="color-apply" type="color" onchange="chooseColor()" id="myColor"> 
+  <div class="row">
+    <div id="container" class="col-md-12">
+      <fieldset>
+        <button class="fontStyle italic" onclick="document.execCommand('italic',false,null);" title="Italicize Highlighted Text"></button>
+        <button class="fontStyle bold" onclick="document.execCommand( 'bold',false,null);" title="Bold Highlighted Text"></button>
+        <button class="fontStyle underline" onclick="document.execCommand( 'underline',false,null);"></button>
+        <select id="input-font" class="input"  onchange="changeFont (this);">
+          <option value="Arial">Arial</option>
+          <option value="Helvetica">Helvetica</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Sans serif">Sans serif</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Palatino">Palatino</option>
+          <option value="Garamond">Garamond</option>
+          <option value="Comic Sans MS">Comic Sans MS</option>
+          <option value="Arial Black">Arial Black</option>
+          <option value="Tahoma">Tahoma</option>
+          <option value="Comic Sans MS">Comic Sans MS</option>
+        </select>
+        <button class="fontStyle strikethrough" onclick="document.execCommand( 'strikethrough',false,null);"><strikethrough></strikethrough></button>
+        <button class="fontStyle align-left" onclick="document.execCommand( 'justifyLeft',false,null);"><justifyLeft></justifyLeft></button>
+        <button class="fontStyle align-center" onclick="document.execCommand( 'justifyCenter',false,null);"><justifyCenter></justifyCenter></button>
+        <button class="fontStyle align-right" onclick="document.execCommand( 'justifyRight',false,null);"><justifyRight></justifyRight></button>
+        <button class="fontStyle redo-apply" onclick="document.execCommand( 'redo',false,null);"><redo></redo></button>
+        <button class="fontStyle undo-apply" onclick="document.execCommand( 'undo',false,null);"><undo></undo></button>
+        <button class="fontStyle orderedlist" onclick="document.execCommand('insertOrderedList', false, null);"><insertOrderedList></insertOrderedList></button>
+        <button class="fontStyle unorderedlist" onclick="document.execCommand('insertUnorderedList',false, null)"><insertUnorderedList></insertUnorderedList></button>    
+        <input class="color-apply" type="color" onchange="chooseColor()" id="myColor"> 
 
-      <!-- font size start -->
-      <select id="fontSize" onclick="changeSize()">
-        <option value="1">1</option>      
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-      </select>
-      <!-- font size end -->
-      
-  </fieldset>
-
-  <div id="editor1" contenteditable="true" data-text="Enter comment...."></div>
-  
-</div>
-
+        <!-- font size start -->
+        <select id="fontSize" onclick="changeSize()">
+          <option value="1">1</option>      
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+        <!-- font size end -->
+        
+      </fieldset>
+      <div id="editor1" contenteditable="true" data-text="Enter comment...."></div>
+    </div>
+  </div>
+  <div class="row">
+      <table border="1" style="margin: 20px"> 
+         <tr> 
+            <td colspan="3"><input type="text" id="result"/></td> 
+            <!-- clr() function will call clr to clear all value -->
+            <td><input type="button" value="c" onclick="clr()"/> </td> 
+         </tr> 
+         <tr> 
+            <!-- create button and assign value to each button -->
+            <!-- dis("1") will call function dis to display value -->
+            <td><input type="button" value="1" onclick="dis('1')"/> </td> 
+            <td><input type="button" value="2" onclick="dis('2')"/> </td> 
+            <td><input type="button" value="3" onclick="dis('3')"/> </td> 
+            <td><input type="button" value="/" onclick="dis('/')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input type="button" value="4" onclick="dis('4')"/> </td> 
+            <td><input type="button" value="5" onclick="dis('5')"/> </td> 
+            <td><input type="button" value="6" onclick="dis('6')"/> </td> 
+            <td><input type="button" value="-" onclick="dis('-')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input type="button" value="7" onclick="dis('7')"/> </td> 
+            <td><input type="button" value="8" onclick="dis('8')"/> </td> 
+            <td><input type="button" value="9" onclick="dis('9')"/> </td> 
+            <td><input type="button" value="+" onclick="dis('+')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input type="button" value="." onclick="dis('.')"/> </td> 
+            <td><input type="button" value="0" onclick="dis('0')"/> </td> 
+            <!-- solve function call function solve to evaluate value -->
+            <td><input type="button" value="=" onclick="solve()"/> </td> 
+            <td><input type="button" value="*" onclick="dis('*')"/> </td> 
+         </tr> 
+      </table> 
+      <input id="inputfile" type="file" accept="audio/*, video/*" style="margin: 20px" />
+      <video id="video" controls autoplay style="margin: 20px" height="200" width="300"></video>
+      </div>
 </body>
+  <script type="text/javascript">
+    (function localFileVideoPlayer() {
+      'use strict'
+      var URL = window.URL || window.webkitURL
+      var playSelectedFile = function(event) {
+        var file = this.files[0]
+        var type = file.type
+        var videoNode = document.getElementById('video')
+        var fileURL = URL.createObjectURL(file)
+        videoNode.src = fileURL
+      }
+      var inputNode = document.getElementById('inputfile')
+      inputNode.addEventListener('change', playSelectedFile, false)
+    })()
+  </script>
 </html>
